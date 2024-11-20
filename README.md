@@ -13,7 +13,7 @@ A cross-platform tool to back up and restore installed packages, applications, a
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/backup-installer.git
+git clone https://github.com/tiagornandrade/backup-installer.git
 cd backup-installer
 ```
 
