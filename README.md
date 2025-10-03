@@ -11,6 +11,12 @@ A cross-platform tool to back up and restore installed packages, applications, a
 
 ## How to Use
 
+### 0. Update homebrew!
+```bash
+brew untap homebrew/homebrew-cask-versions
+/opt/homebrew/bin/brew update
+```
+
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/tiagornandrade/backup-installer.git
