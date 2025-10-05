@@ -55,10 +55,12 @@ elif [[ "$OS" == "Linux" ]]; then
     dpkg --get-selections | awk '{print $1}' | xargs echo "sudo apt install -y" >> $OUTPUT_FILE
 fi
 
-echo "" >> $OUTPUT_FILE
-echo "# Install pip packages" >> $OUTPUT_FILE
-echo "pip install --upgrade pip" >> $OUTPUT_FILE
-pip freeze | sed 's/^/pip install /' >> $OUTPUT_FILE
+if command -v python3 > /dev/null; then
+    echo "" >> $OUTPUT_FILE
+    echo "# Install pip packages" >> $OUTPUT_FILE
+    echo "python3 -m pip install --upgrade pip" >> $OUTPUT_FILE
+    python3 -m pip freeze | sed 's/^/python3 -m pip install /' >> $OUTPUT_FILE
+fi
 
 if command -v npm > /dev/null; then
     echo "" >> $OUTPUT_FILE
